@@ -4,6 +4,7 @@ import axios from "axios";
 import SearchBar from "./components/SearchBar";
 import PlayerStats from "./components/PlayerStats";
 import PlayerLegends from "./components/PlayerLegends";
+import MatchHistory from "./components/MatchHistory";
 
 function App() {
   const [platform, setPlatform] = useState("origin");
@@ -50,6 +51,10 @@ function App() {
             playerData={playerData}
             activeLegendName={activeLegendName}
           />
+        )}
+
+        {playerData && (
+          <MatchHistory platform={platform} playerName={playerName} />
         )}
       </div>
     </div>
